@@ -1,84 +1,38 @@
-# 🎨 Painting with AI  
+# AI Mood Guardian
 
-*Building AI 課程最終專案*
+This is my final project for the Building AI course! My goal was to make emotion management more approachable and practical for everyday life, with a little help from AI.
 
----
+## Motivation
+Everyone faces stress and mood swings, and I often found it hard to notice my own emotions until it was too late. I wanted to create a supportive AI “guardian” that helps me—and hopefully others—quickly understand how we’re feeling and get simple, effective tips, whether it’s a breathing exercise, a bit of meditation, or just a quick motivational nudge.
 
-## ✨ 摘要
+## Project Highlights
+- Supports emotion detection from text, voice, and even facial expressions (via webcam—optional!)
+- Custom AI models analyze input data to suggest relaxation techniques or motivation, not just generic advice
+- Users can rate feedback to make the suggestions more personalized and smarter over time
+- Strong focus on privacy—audio and video are processed locally if you want, and all data is anonymized
+- Tracks your mood over time so you can discover interesting patterns in your emotional journey
 
-**Painting with AI** 是一個 AI 藝術生成工具。使用者只需輸入文字描述、草圖或參考圖片，AI 就能快速產生獨特的數位畫作。  
-適合藝術家、學生與創作者，幫助快速實現創意靈感。
+## What I Learned
+Emotion data is SO diverse—capturing and understanding subtle feelings isn’t simple, and most open datasets are based on Western cultures. In the future, I hope to collect more data from local (Taiwanese/Asian) users and team up with mental health professionals for expert advice.
 
----
+## How It Works
+1. Choose your input: write a message, record your voice, or turn on the webcam.
+2. The AI detects your mood and gives you a relaxation or motivation tip on the spot.
+3. Rate the suggestions, so the system gets better for you.
+4. Every week, check your “mood graph” and maybe spot something new about yourself!
 
-## 🖌 背景
+## Technology Stack
+- NLP for text sentiment analysis  
+- CNNs for facial emotion recognition  
+- Deep learning for audio emotion analysis  
+- Custom recommendation engine, adjusted by your feedback
 
-創作藝術的門檻往往高，許多人缺乏技巧或時間。AI 可以提供靈感、降低技術限制，並加速創作流程。
+## Looking Ahead
+- I’d love to integrate the tool with LINE, Messenger, or other chat apps, so you can get emotional support anywhere, anytime
+- Expand emotion datasets with local voices and experiences for more accurate recognition
+- Improve long-term tracking and data visualization
+- Collaborate with mental health professionals to make tips safer and more effective, especially for tough times
 
-**解決問題：**  
-- 藝術愛好者無法將想法可視化  
-- 專業創作者需要快速概念草稿  
-- 創意受阻的人需要靈感來源  
+## Acknowledgments
+Inspired by emotion research AI, mental health tech, and the countless open-source contributors.
 
-**個人動機：**  
-喜歡結合科技與創意，希望 AI 能讓更多人享受數位藝術的樂趣。
-
----
-
-## 🛠 使用方式
-
-### 使用流程
-<div style="background-color:#f0f0f0; padding:10px; border-radius:5px;">
-1. 使用者輸入文字描述、草圖或參考圖片  
-2. AI 分析輸入並生成數位畫作  
-3. 使用者下載或修改輸入以產生新作品
-</div>
-
-### 使用對象
-- 專業藝術家與概念設計師  
-- 學生或藝術愛好者  
-- 社群創作者
-
----
-
-## 🖼 AI 作品展示
-
-### 單張展示
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300" style="border-radius:8px; margin:10px 10px 10px 0;">  
-*範例作品，可替換成自己的圖像*
-
-### 網格展示多張作品
-<table>
-<tr>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-</tr>
-<tr>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="200" style="border-radius:5px;"></td>
-</tr>
-</table>
-*可替換成你的多個 AI 生成作品，形成展示網格*
-
----
-
-### 範例程式碼
-```python
-from PIL import Image
-from ai_painting import PaintingAI
-
-# 初始化 AI 模型
-ai = PaintingAI(model="artistic_v1")
-
-# 根據文字生成作品
-artwork1 = ai.generate(prompt="水彩風格的日出森林")
-artwork1.save("sunrise_forest.png")
-
-artwork2 = ai.generate(prompt="油畫風格的城市夜景")
-artwork2.save("city_night.png")
-
-# 顯示作品
-artwork1.show()
-artwork2.show()
